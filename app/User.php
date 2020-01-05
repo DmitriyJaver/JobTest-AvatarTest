@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Jobs\CropImages;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -43,6 +44,7 @@ class User extends Authenticatable implements HasMedia
 
     public function registerMediaConversions(Media $media = null)
         {
-            $this->addMediaConversion('thumb')->width(60)->height(60);
+
+            $this->addMediaConversion('thumb')->width(60)->height(60)->nonQueued();
         }
 }
