@@ -1,0 +1,3 @@
+<div>
+    Welcome {{ $userName ?? ''}}
+</div>
